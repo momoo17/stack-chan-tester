@@ -1,4 +1,4 @@
- #include <Arduino.h>
+#include <Arduino.h>
 
 #include <SD.h>
 #include <Update.h>
@@ -136,7 +136,7 @@ void mumumuServo() {
 
 void setup() {
   auto cfg = M5.config();     // 設定用の情報を抽出
-  //cfg.output_power = true;    // Groveポートの5V出力をする／しない（TakaoBase用）
+  cfg.output_power = true;    // Groveポートの5V出力をする／しない（TakaoBase用）
   M5.begin(cfg);              // M5Stackをcfgの設定で初期化
 #ifdef ARDUINO_M5STACK_CORES3
   unifiedButton.begin(&M5.Display, goblib::UnifiedButton::appearance_t::transparent_all);
